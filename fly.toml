@@ -1,0 +1,22 @@
+# fly.toml file generated for sirbh-phnbook on 2023-03-28T23:13:55+03:00
+
+app = "sirbh-phnbook"
+primary_region = "ams"
+
+[env]
+  PORT = "8080"
+
+[deploy]
+  release_command = "npm run build"
+
+[processes]
+  app = "node app.js"
+
+[build]
+  [build.args]
+    NODE_VERSION = "16.19.1"
+
+[[services]]
+  http_checks = []
+  internal_port = 8080
+  processes = ["app"]
