@@ -30,7 +30,7 @@ app.get("/info", (request, response, next) => {
   Person.count({})
     .then((count) => {
       response.send(
-        `Phonebook has info for ${count} people <br> ${new Date()}`
+        `Phonebook has the info for ${count} people <br> ${new Date()}`
       );
     })
     .catch((error) => next(error));
